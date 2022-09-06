@@ -2,6 +2,11 @@
 // so you can safely delete all default props below
 
 export default {
-  failed: 'Action failed',
-  success: 'Action was successful'
+  title: 'Quick Notes',
+  note: 'Note',
+  save: 'Save',
+  cancel: 'Cancel',
+  areYouSure: 'Are you sure?',
+  yes: 'Yes',
+  no: 'No',
 };
