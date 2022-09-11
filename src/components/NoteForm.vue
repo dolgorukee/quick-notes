@@ -1,6 +1,6 @@
 <template>
   <q-input
-    v-model="text"
+    v-model="content"
     type="textarea"
     :label="$t('note')"
     class="full-width q-mt-md max-width"
@@ -31,12 +31,12 @@ const emit = defineEmits<{
   (e: 'cancel'): void;
 }>();
 
-const text = ref(props.note ? props.note.text : '');
+const content = ref(props.note ? props.note.content : '');
 
 function save() {
   emit('save', {
     id: props.note ? props.note.id : new Date().toISOString(),
-    text: text.value,
+    content: content.value,
   });
 }
 

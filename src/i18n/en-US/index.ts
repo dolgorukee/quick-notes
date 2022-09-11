@@ -9,4 +9,8 @@ export default {
   areYouSure: 'Are you sure?',
   yes: 'Yes',
   no: 'No',
+  email: 'Email',
+  password: 'Password',
+  signUp: 'Sign Up',
+  logIn: 'Log In',
 };

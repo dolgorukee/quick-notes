@@ -13,4 +13,6 @@ import { useNotesStore } from 'src/stores/notes-store';
 
 const notesStore = useNotesStore();
 const { notes } = storeToRefs(notesStore);
+
+notesStore.getNotes();
 </script>

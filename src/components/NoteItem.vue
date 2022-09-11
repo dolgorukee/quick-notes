@@ -1,6 +1,6 @@
 <template>
   <q-item>
-    <q-item-section>{{ note.text }}</q-item-section>
+    <q-item-section>{{ note.content }}</q-item-section>
     <q-item-section side>
       <q-btn icon="edit" @click="editNote"></q-btn>
       <q-btn
@@ -58,6 +58,7 @@ function dismissDeleteNoteConfirmationDialog() {
 
 function deleteNote() {
   notesStore.deleteNote(props.note.id);
+  dismissDeleteNoteConfirmationDialog();
 }
 
 function editNote() {

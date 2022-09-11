@@ -17,8 +17,25 @@ const route = useRoute();
 const existingNote = notesStore.noteById(route.params.id as string);
 
 function save(note: Note) {
-  existingNote ? notesStore.editNote(note) : notesStore.addNote(note);
-  router.push({ name: 'Index' });
+  existingNote
+    ? notesStore.editNote(
+        note,
+        () => {
+          router.push({ name: 'Index' });
+        },
+        (error: Error) => {
+          console.error(error);
+        }
+      )
+    : notesStore.addNote(
+        note,
+        () => {
+          router.push({ name: 'Index' });
+        },
+        (error: Error) => {
+          console.error(error);
+        }
+      );
 }
 
 function cancel() {

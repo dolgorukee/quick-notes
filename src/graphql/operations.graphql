@@ -1,0 +1,74 @@
+mutation SignUp($input: SignUpInput!) {
+  signUp(input: $input) {
+    viewer {
+      user {
+        ...UserFields
+      }
+      sessionToken
+    }
+  }
+}
+
+mutation LogIn($input: LogInInput!) {
+  logIn(input: $input) {
+    viewer {
+      user {
+        ...UserFields
+      }
+      sessionToken
+    }
+  }
+}
+
+fragment UserFields on User {
+  id
+  username
+  __typename
+}
+
+mutation CreateNote($input: CreateNoteInput!) {
+  createNote(input: $input) {
+    note {
+      ...NoteFields
+    }
+    __typename
+  }
+}
+
+mutation UpdateNote($input: UpdateNoteInput!) {
+  updateNote(input: $input) {
+    note {
+      ...NoteFields
+    }
+    __typename
+  }
+}
+
+mutation DeleteNote($input: DeleteNoteInput!) {
+  deleteNote(input: $input) {
+    note {
+      ...NoteFields
+    }
+    __typename
+  }
+}
+
+query GetNotes {
+  notes {
+    count
+    edges {
+      cursor
+      node {
+        ...NoteFields
+      }
+      __typename
+    }
+    __typename
+  }
+}
+
+fragment NoteFields on Note {
+  id
+  content
+  __typename
+}

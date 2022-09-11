@@ -8,17 +8,30 @@ const routes: RouteRecordRaw[] = [
       {
         path: '',
         name: 'Index',
+        meta: { requiresAuth: true },
         component: () => import('pages/IndexPage.vue'),
       },
       {
         path: 'add-note',
         name: 'AddNote',
+        meta: { requiresAuth: true },
         component: () => import('pages/EditNote.vue'),
       },
       {
         path: 'edit-note/:id',
         name: 'EditNote',
+        meta: { requiresAuth: true },
         component: () => import('pages/EditNote.vue'),
+      },
+      {
+        path: 'sign-up',
+        name: 'SignUp',
+        component: () => import('pages/SignUpPage.vue'),
+      },
+      {
+        path: 'log-in',
+        name: 'LogIn',
+        component: () => import('pages/LogInPage.vue'),
       },
     ],
   },
